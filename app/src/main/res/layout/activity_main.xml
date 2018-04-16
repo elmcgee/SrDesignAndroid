@@ -12,27 +12,45 @@
 
     <TextView
         android:id="@+id/textview_title"
-        android:text="@string/app_name"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        />
+        android:text="@string/app_name"
+        android:textStyle="bold" />
+
     <Button
         android:id="@+id/button_enableBT"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="ENABLE BT" 
-        android:layout_below="@id/textview_title"/>
-<Button
-    android:id="@+id/button_alreadyPairedBT"
-    android:text="SHOW PAIRED BT DEVICES"
-    android:layout_below="@+id/button_enableBT"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content" />
-<Button
-    android:id="@+id/button_scanBT"
-    android:text="SCAN FOR BT DEVICES"
-    android:layout_below="@id/button_alreadyPairedBT"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content" />
+        android:layout_below="@id/textview_title"
+        android:text="ENABLE BT"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button_alreadyPairedBT"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_enableBT"
+        android:text="SHOW PAIRED BT DEVICES"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button_scanBT"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_alreadyPairedBT"
+        android:text="SCAN FOR BT DEVICES"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button_touchScreen"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_scanBT"
+        android:background="#0080ff"
+        android:onClick="onButtonTouchClick"
+        android:text="Touch Screen"
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold" />
+
 </RelativeLayout>

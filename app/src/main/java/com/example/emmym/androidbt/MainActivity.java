@@ -65,6 +65,14 @@ private Button button_enableBT, button_displayPairedBT, button_scanBT;
 
 
     }
+    //method for touch screen button
+    public void onButtonTouchClick(View v){
+        if(v.getId() == R.id.button_touchScreen){
+            Intent intent = new Intent(MainActivity.this, touch_screen.class);
+            startActivity(intent);
+
+        }
+    }
     private void enableBluetoothOnDevice(){
         if(mBluetoothAdapter == null){
             Log.e(LOG_TAG, "This device does not have a bluetooth adapter");
