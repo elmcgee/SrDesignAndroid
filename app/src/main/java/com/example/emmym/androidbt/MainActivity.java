@@ -105,7 +105,7 @@ private Button button_enableBT, button_displayPairedBT, button_scanBT;
 
         if(pairedDevices.size() > 0){
             arrayOfAlreadyPairedBTDevices = new ArrayList<BluetoothObject>();
-            //Loop throuugh paired devices
+            //Loop through paired devices
             for(BluetoothDevice device: pairedDevices){
                 BluetoothObject bluetoothObject = new BluetoothObject();
                 bluetoothObject.setBluetooth_name(device.getName());
