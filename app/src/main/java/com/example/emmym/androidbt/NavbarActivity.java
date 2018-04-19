@@ -5,7 +5,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-public class Navbar extends AppCompatActivity{
+public class NavbarActivity extends AppCompatActivity{
         private DrawerLayout mDrawerLayout;
         private ActionBarDrawerToggle mToggle;
 

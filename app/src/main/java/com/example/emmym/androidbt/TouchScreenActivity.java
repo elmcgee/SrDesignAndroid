@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-public class touch_screen extends Activity {
+public class TouchScreenActivity extends Activity {
     private RelativeLayout touchScreen = null;
     private ImageView blueBox, greenBox, redBox, orangeBox, bigOrangeBox;
     @Override

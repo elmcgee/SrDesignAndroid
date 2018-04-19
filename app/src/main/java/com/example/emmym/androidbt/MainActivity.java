@@ -1,10 +1,6 @@
 package com.example.emmym.androidbt;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.IntentFilter;
 import android.os.Build;
-import android.os.ParcelUuid;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -68,7 +64,7 @@ private Button button_enableBT, button_displayPairedBT, button_scanBT;
     //method for touch screen button
     public void onButtonTouchClick(View v){
         if(v.getId() == R.id.button_touchScreen){
-            Intent intent = new Intent(MainActivity.this, touch_screen.class);
+            Intent intent = new Intent(MainActivity.this, TouchScreenActivity.class);
             startActivity(intent);
 
         }
@@ -76,7 +72,7 @@ private Button button_enableBT, button_displayPairedBT, button_scanBT;
     //method for navbar button
     public void onButtonNavClick(View v){
         if(v.getId() == R.id.button_navBar){
-            Intent intent = new Intent(MainActivity.this, Navbar.class);
+            Intent intent = new Intent(MainActivity.this, NavbarActivity.class);
             startActivity(intent);
         }
     }

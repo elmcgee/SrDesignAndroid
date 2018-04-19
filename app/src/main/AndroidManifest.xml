@@ -18,10 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".touch_screen"/>
+        <activity android:name=".TouchScreenActivity"/>
         <activity android:name=".AlreadyPairedList"/>
         <activity android:name=".FoundBTDevices"/>
-        <activity android:name=".Navbar"/>
+        <activity android:name=".NavbarActivity"/>
     </application>
 
     </manifest>
