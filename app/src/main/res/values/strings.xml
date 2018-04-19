@@ -1,5 +1,9 @@
 <resources>
-    <string name="app_name">AndroidBT</string>
+    <string name="app_name">Kalona Museum</string>
     <string name="hello_world">Hello world!</string>
     <string name="app_settings">Settings</string>
+    <string name ="bluetooth_category">Bluetooth</string>
+    <string name ="touch_map">Mock Map</string>
+    <string name ="open">Open</string>
+    <string name ="close">Close</string>
 </resources>

@@ -73,6 +73,13 @@ private Button button_enableBT, button_displayPairedBT, button_scanBT;
 
         }
     }
+    //method for navbar button
+    public void onButtonNavClick(View v){
+        if(v.getId() == R.id.button_navBar){
+            Intent intent = new Intent(MainActivity.this, Navbar.class);
+            startActivity(intent);
+        }
+    }
     private void enableBluetoothOnDevice(){
         if(mBluetoothAdapter == null){
             Log.e(LOG_TAG, "This device does not have a bluetooth adapter");

@@ -21,6 +21,7 @@
         <activity android:name=".touch_screen"/>
         <activity android:name=".AlreadyPairedList"/>
         <activity android:name=".FoundBTDevices"/>
+        <activity android:name=".Navbar"/>
     </application>
 
     </manifest>
