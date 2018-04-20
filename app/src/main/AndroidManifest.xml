@@ -18,8 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".touch_screen"/>
         <activity android:name=".AlreadyPairedList"/>
         <activity android:name=".FoundBTDevices"/>
     </application>
 
-</manifest>
+    </manifest>

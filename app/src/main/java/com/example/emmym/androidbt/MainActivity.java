@@ -65,6 +65,14 @@ private Button button_enableBT, button_displayPairedBT, button_scanBT;
 
 
     }
+    //method for touch screen button
+    public void onButtonTouchClick(View v){
+        if(v.getId() == R.id.button_touchScreen){
+            Intent intent = new Intent(MainActivity.this, touch_screen.class);
+            startActivity(intent);
+
+        }
+    }
     private void enableBluetoothOnDevice(){
         if(mBluetoothAdapter == null){
             Log.e(LOG_TAG, "This device does not have a bluetooth adapter");
@@ -97,7 +105,7 @@ private Button button_enableBT, button_displayPairedBT, button_scanBT;
 
         if(pairedDevices.size() > 0){
             arrayOfAlreadyPairedBTDevices = new ArrayList<BluetoothObject>();
-            //Loop throuugh paired devices
+            //Loop through paired devices
             for(BluetoothDevice device: pairedDevices){
                 BluetoothObject bluetoothObject = new BluetoothObject();
                 bluetoothObject.setBluetooth_name(device.getName());
