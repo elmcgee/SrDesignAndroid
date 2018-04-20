@@ -125,7 +125,7 @@ private Button button_enableBT, button_displayPairedBT, button_scanBT;
     }
     private void scanForBluetoothDevices(){
         //Register the BroadcastReceiver
-        Intent intent = new Intent(this, FoundBTDevices.class);
+        Intent intent = new Intent(MainActivity.this, FoundBTDevices.class);
         startActivity(intent);
     }
 

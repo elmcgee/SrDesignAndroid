@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MapMenu">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MapMenu"
+    >
 
     <TextView
         android:layout_width="match_parent"
@@ -12,6 +14,11 @@
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20dp"
-        android:textStyle="bold" />
-
+        android:textStyle="bold"
+        android:id="@+id/textView_map"/>
+<fragment
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@id/textView_map"
+    />
 </FrameLayout>

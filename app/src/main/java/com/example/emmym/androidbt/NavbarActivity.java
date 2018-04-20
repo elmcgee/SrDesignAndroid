@@ -1,5 +1,6 @@
 package com.example.emmym.androidbt;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -38,12 +39,18 @@ public class NavbarActivity extends AppCompatActivity{
         switch(menuItem.getItemId()){
             case R.id.bluetoothMenu:
                 fragmentClass = BluetoothMenu.class;
+               Intent bluetoothIntent = new Intent(NavbarActivity.this, BluetoothActivity.class);
+               startActivity(bluetoothIntent);
                 break;
             case R.id.map:
                 fragmentClass = MapMenu.class;
+                Intent mapIntent = new Intent( NavbarActivity.this,TouchScreenActivity.class );
+                startActivity(mapIntent);
                 break;
             default:
                 fragmentClass = BluetoothMenu.class;
+                bluetoothIntent = new Intent(NavbarActivity.this, BluetoothActivity.class);
+                startActivity(bluetoothIntent);
                 break;
         }
         try{
