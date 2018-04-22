@@ -18,9 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".touch_screen"/>
+        <activity android:name=".MapActivity"/>
         <activity android:name=".AlreadyPairedList"/>
         <activity android:name=".FoundBTDevices"/>
+        <activity android:name=".AlterMapActivity"/>
+        <activity android:name=".BluetoothActivity"/>
     </application>
 
     </manifest>

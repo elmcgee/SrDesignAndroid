@@ -1,5 +1,21 @@
 <resources>
-    <string name="app_name">AndroidBT</string>
+    <string name="app_name">Team eX-Kalona</string>
+    <string name="activity_title">Activities</string>
     <string name="hello_world">Hello world!</string>
+    <string name ="map"> Exhibit Map </string>
+    <string name ="edit_map"> Edit Exhibit Map</string>
+    <string name ="bluetooth"> Bluetooth </string>
     <string name="app_settings">Settings</string>
+    <string name="enable_bt">ENABLE BT</string>
+    <string name="paired_bt">SHOW PAIRED BT DEVICES</string>
+    <string name="scan_bt">SCAN FOR BT DEVICES</string>
+    <string name="bt_btn_title">BLUETOOTH</string>
+    <string name="map_btn">EXHIBIT MAP</string>
+    <string name="blue_exhibit">Blue</string>
+    <string name="green_exhibit">Green</string>
+    <string name="red_exhibit">Red</string>
+    <string name="orange_exhibit">Orange</string>
+    <string name="orange_floor">Orange Floor</string>
+    <string name="exhibit_col">Exhibit</string>
+    <string name="description_col">Description</string>
 </resources>
