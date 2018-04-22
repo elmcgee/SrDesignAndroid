@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:layout="http://schemas.android.com/apk/res-auto"
+
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".BluetoothActivity">
+
+    <fragment
+        android:id="@+id/bluetooth_frags"
+        android:layout_width="match_parent"
+        android:layout_height="495dp" />
+
+    <Button
+        android:id="@+id/button_enableBT"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textview_title"
+        android:text="ENABLE BT"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button_alreadyPairedBT"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_enableBT"
+        android:text="SHOW PAIRED BT DEVICES"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button_scanBT"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_alreadyPairedBT"
+        android:text="SCAN FOR BT DEVICES"
+        android:textStyle="bold" />
+</RelativeLayout>

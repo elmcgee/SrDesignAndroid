@@ -19,34 +19,25 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/button_enableBT"
+        android:id="@+id/button_BT"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textview_title"
-        android:text="ENABLE BT"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/button_alreadyPairedBT"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button_enableBT"
-        android:text="SHOW PAIRED BT DEVICES"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/button_scanBT"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/button_alreadyPairedBT"
-        android:text="SCAN FOR BT DEVICES"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="78dp"
+        android:background="#0080ff"
+        android:onClick="onButtonBTClick"
+        android:text="Bluetooth"
+        android:textColor="@android:color/background_light"
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/button_touchScreen"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/button_scanBT"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="191dp"
         android:background="#0080ff"
         android:onClick="onButtonTouchClick"
         android:text="Touch Screen"
@@ -57,9 +48,9 @@
         android:id="@+id/button_navBar"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="220dp"
+        android:layout_marginTop="138dp"
         android:background="#0080ff"
         android:onClick="onButtonNavClick"
         android:text="NavBar"
