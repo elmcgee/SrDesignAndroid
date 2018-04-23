@@ -23,6 +23,10 @@
         <activity android:name=".FoundBTDevices"/>
         <activity android:name=".AlterMapActivity"/>
         <activity android:name=".BluetoothActivity"/>
+        <activity android:name=".ActivityBlue"/>
+        <activity android:name=".ActivityGreen"/>
+        <activity android:name=".ActivityRed"/>
+        <activity android:name=".ActivityOrange"/>
     </application>
 
     </manifest>
