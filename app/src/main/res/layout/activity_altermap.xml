@@ -134,7 +134,7 @@
         android:layout_alignRight="@+id/edit_map_title" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="65dp"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/edit_orange_floor"
         android:text="@string/orange_floor" />

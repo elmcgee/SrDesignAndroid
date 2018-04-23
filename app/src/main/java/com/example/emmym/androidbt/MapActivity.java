@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
@@ -17,11 +18,13 @@ public class MapActivity extends Activity {
     private String red_text = null;
     private String orange_text = null;
     private String orange_floor = null;
+    private Toast toast;
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+
         RelativeLayout touchScreen = findViewById(R.id.touchLayout);
         ImageView blueBox = findViewById(R.id.blue_square);
         ImageView greenBox = findViewById(R.id.green_square);
@@ -46,6 +49,7 @@ public class MapActivity extends Activity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 Toast.makeText(getApplicationContext(), "You touched the layout", Toast.LENGTH_SHORT).show();
+
                 return true;
             }
         });
