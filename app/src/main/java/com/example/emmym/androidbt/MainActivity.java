@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         super.onPause();
         mScannerView.stopCamera(); //Stop camera on pause
     }// end onPause
+//hi
 
 
 }//end MainActivity
