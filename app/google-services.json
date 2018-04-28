@@ -1,35 +1,35 @@
 {
   "project_info": {
-    "project_number": "411705152502",
-    "firebase_url": "https://androidsrdesign.firebaseio.com",
-    "project_id": "androidsrdesign",
-    "storage_bucket": "androidsrdesign.appspot.com"
+    "project_number": "429834837546",
+    "firebase_url": "https://senior-design-e998f.firebaseio.com",
+    "project_id": "senior-design-e998f",
+    "storage_bucket": "senior-design-e998f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:411705152502:android:2a88bff316e465b7",
+        "mobilesdk_app_id": "1:429834837546:android:be9caa8319e5bdcc",
         "android_client_info": {
           "package_name": "com.example.emmym.androidbt"
         }
       },
       "oauth_client": [
         {
-          "client_id": "411705152502-24c6fnqpjrlehtirv14o8hrjvmtkakna.apps.googleusercontent.com",
+          "client_id": "429834837546-usn76c43k4m4do27n26dt1f8orb6om14.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.emmym.androidBT",
-            "certificate_hash": "7d9b3dcdd04341043b7400c2986f026e3531da0f"
+            "package_name": "com.example.emmym.androidbt",
+            "certificate_hash": "b1a58a018e14dfb0f4692b1cb5087ae2e6b3d878"
           }
         },
         {
-          "client_id": "411705152502-mp4lc02cfonagppd6ft9lskdlp765424.apps.googleusercontent.com",
+          "client_id": "429834837546-1vtelcrjeovmj9g0u872bt6cpd3rcps4.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCArpFT8K7SOCMtooAltGmCnUPInFD-2bs"
+          "current_key": "AIzaSyAjRoMryGeVqhhi2qtSB7Jq2nz4qc4eNF4"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "411705152502-mp4lc02cfonagppd6ft9lskdlp765424.apps.googleusercontent.com",
+              "client_id": "429834837546-1vtelcrjeovmj9g0u872bt6cpd3rcps4.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
