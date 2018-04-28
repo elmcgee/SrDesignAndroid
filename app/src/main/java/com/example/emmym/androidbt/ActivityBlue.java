@@ -8,6 +8,6 @@ public class ActivityBlue extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_blue);
+        setContentView(R.layout.activity_blue); // grabs content of blue activity from activity_blue.xml
     }
 }

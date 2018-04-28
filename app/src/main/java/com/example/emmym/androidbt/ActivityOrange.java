@@ -9,6 +9,6 @@ public class ActivityOrange extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_orange);
+        setContentView(R.layout.activity_orange);// grabs content of orange activity from activity_orange.xml
     }
 }

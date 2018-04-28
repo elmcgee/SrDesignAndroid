@@ -54,6 +54,8 @@ public class MapActivity extends Activity {
         });*/
 
 
+
+
         //BlueBox touch
         final Handler blueHandle = new Handler();
         blueBox.setOnTouchListener(new View.OnTouchListener() {
