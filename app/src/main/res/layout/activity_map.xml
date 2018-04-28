@@ -145,4 +145,16 @@
         android:layout_alignParentLeft="true"
         android:onClick="onEditMapClick"/>
 -->
+    <Button
+        android:id="@+id/qr_activity_btn"
+        android:layout_width="156dp"
+        android:layout_height="37dp"
+        android:layout_alignEnd="@+id/green_square"
+        android:layout_alignParentTop="true"
+        android:background="#0080ff"
+        android:onClick="onQRClick"
+        android:text="Go to QR CODE ACTIVITY"
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold" />
+
 </RelativeLayout>

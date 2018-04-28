@@ -36,6 +36,8 @@ public class MapActivity extends Activity {
         final ImageView personStar = findViewById(R.id.star_person);
 
 
+
+
         //BlueBox touch
         final Handler blueHandle = new Handler();
         blueBox.setOnTouchListener(new View.OnTouchListener() {

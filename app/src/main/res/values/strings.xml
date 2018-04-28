@@ -18,4 +18,5 @@
     <string name="orange_floor">Orange Floor</string>
     <string name="exhibit_col">Exhibit</string>
     <string name="description_col">Description</string>
+    <string name="result_text_default">Please focus camera to QR Code</string>
 </resources>

@@ -11,6 +11,11 @@ public class User {
 
     public User() {}
 
+    public User(String name) {
+        this.name = name;
+        timestamp = 0;
+    }
+
     public User(String name, long timestamp) {
         this.name = name;
         this.timestamp = timestamp;
