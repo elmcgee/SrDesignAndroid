@@ -1,7 +1,6 @@
 package com.example.emmym.androidbt;
 
 import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
@@ -20,7 +19,6 @@ import java.util.Iterator;
 import java.util.Map;
 
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -34,13 +32,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //View Objects
     private Button buttonScan;
 
-    private String userString;
+    private User localUser;
 
     private static final String TAG = "MainActivity";
     private FirebaseSnapshotObject currentSnapshot;
-
-    TextView txtResult;
-    int RequestCameraPermissionID = 1001;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,19 +45,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 FirebaseSnapshotObject tempSnapshot = dataSnapshot.getValue(FirebaseSnapshotObject.class);
-                if(currentSnapshot != null) {
+                if(currentSnapshot != null && localUser != null) {
                     Map<String, ArrayList<String>> detectionResult = tempSnapshot.whoWasDetected(currentSnapshot);
                     if (detectionResult != null) {
                         Iterator it = detectionResult.entrySet().iterator();
                         while (it.hasNext()) {
                             Map.Entry pair = (Map.Entry)it.next();
                             for(String name: ((ArrayList<String>)pair.getValue())) {
-                                Toast.makeText(getApplicationContext(), "Detected " + name + "'s face at " + pair.getKey() + ".", Toast.LENGTH_LONG).show();
+                                if(name.equals(localUser.getName())) {
+                                    Toast.makeText(getApplicationContext(), "Your face is detected at " + pair.getKey(), Toast.LENGTH_LONG).show();
+                                }
+
                                 Log.d(TAG, "Detected " + name + "'s face at " + pair.getKey() + ".");
                             }
                             it.remove(); // avoids a ConcurrentModificationException
                         }
                     }
+                } else if(localUser == null) {
+                    Toast.makeText(getApplicationContext(), "Make sure you scan your QRCode", Toast.LENGTH_LONG).show();
                 }
                 currentSnapshot = tempSnapshot;
             }
@@ -115,8 +115,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     //converting the data to json
                     JSONObject obj = new JSONObject(result.getContents());
                     //setting values to textviews
-                    Toast.makeText(this, obj.toString(), Toast.LENGTH_LONG).show();
-//                    textViewName.setText(obj.getString("name"));
+                    Toast.makeText(this, "successful", Toast.LENGTH_LONG).show();
+                    localUser = new User(obj.getString("name"));
 //                    textViewAddress.setText(obj.getString("address"));
                 } catch (JSONException e) {
                     e.printStackTrace();
