@@ -24,40 +24,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         eMachinesRef = FirebaseDatabase.getInstance().getReference("events/");
-
-
-        /*
-        // Read from the database
-        ChildEventListener childEventListener = new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String previousChildName) {
-                Log.d(TAG, "onChildAdded:" + dataSnapshot.getKey());
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String previousChildName) {
-                Log.d(TAG, "onChildChanged:" + dataSnapshot.getKey());
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-                Log.d(TAG, "onChildRemoved:" + dataSnapshot.getKey());
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String previousChildName) {
-                Log.d(TAG, "onChildMoved:" + dataSnapshot.getKey());
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.w(TAG, "postComments:onCancelled", databaseError.toException());
-            }
-        };
-        eMachinesRef.addChildEventListener(childEventListener);
-
-        */
-// /*
         eMachinesRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -76,12 +42,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 currentSnapshot = tempSnapshot;
-                //TODO: if there is any changes from the previous snapshot, we need to know
-                //TODO: who was caught on camera and where the camera is located.
-                // Log.d(TAG, dataSnapshot.getValue().toString());
-//                String value = dataSnapshot.getValue(String.class);
-//                Log.d(TAG, value);
-//                Log.d(TAG, "Value is: " + value);
             }
 
             @Override
