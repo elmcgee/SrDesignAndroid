@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.util.Log;
 import android.view.View;
+
+import android.widget.Toast;
+
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,6 +30,7 @@ import org.json.JSONObject;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener  {
+
     public DatabaseReference eMachinesRef;
     //qr code scanner object
     private IntentIntegrator qrScan;
@@ -57,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 }
 
                                 Log.d(TAG, "Detected " + name + "'s face at " + pair.getKey() + ".");
+
                             }
                             it.remove(); // avoids a ConcurrentModificationException
                         }
@@ -138,4 +144,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         qrScan.initiateScan();
     }
 }//end MainActivity
+
 
