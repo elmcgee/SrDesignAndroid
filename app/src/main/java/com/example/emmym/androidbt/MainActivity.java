@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
+
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -14,6 +16,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
+
+import static android.widget.Toast.*;
 
 public class MainActivity extends AppCompatActivity {
     public DatabaseReference eMachinesRef;
@@ -35,7 +39,9 @@ public class MainActivity extends AppCompatActivity {
                         while (it.hasNext()) {
                             Map.Entry pair = (Map.Entry)it.next();
                             for(String name: ((ArrayList<String>)pair.getValue())) {
-                                Log.d(TAG, "Detected " + name + "'s face at " + pair.getKey() + ".");
+                                String message = "Detected " + name + "'s face at " + pair.getKey() + ".";
+                                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                               Log.d(TAG, "Detected " + name + "'s face at " + pair.getKey() + ".");
                             }
                             it.remove(); // avoids a ConcurrentModificationException
                         }
@@ -63,11 +69,11 @@ public class MainActivity extends AppCompatActivity {
     }
     
     //method for bluetooth button
-    public void onBTClick (View v){
+  /*  public void onBTClick (View v){
         if(v.getId() == R.id.bt_button){
             Intent intent = new Intent(MainActivity.this, BluetoothActivity.class);
             startActivity(intent);
         }
-    }
+    }*/
 }
 
