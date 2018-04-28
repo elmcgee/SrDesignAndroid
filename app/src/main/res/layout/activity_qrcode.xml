@@ -3,22 +3,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     
-   <!-- <SurfaceView
+    <SurfaceView
         android:id="@+id/cameraPreview"
         android:layout_centerInParent="true"
         android:layout_width="match_parent"
         android:layout_height="480px"
-        />-->
+        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:orientation = "vertical">
-        
-        <TextView
-            android:layout_width=""
-            android:layout_height="" />
-        
+
     </LinearLayout>
     <TextView
         android:layout_centerHorizontal="true"
