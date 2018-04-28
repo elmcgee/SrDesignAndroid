@@ -13,12 +13,15 @@ import android.view.View;
 
 import android.widget.ImageView;
 
+import com.google.firebase.database.FirebaseDatabase;
+
 
 public class MainActivity extends AppCompatActivity {
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_map); //displays contents of activity_map.xml
         // Image view of each of the "exhibits"; IDs located in activity.map.xml
         final ImageView blueBox = findViewById(R.id.blue_square);
@@ -96,26 +99,36 @@ public class MainActivity extends AppCompatActivity {
         //orangeBox touch
         final Handler orangeHandle = new Handler();
         orangeBox.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(final View v, MotionEvent event) {
-                // Toast.makeText(getApplicationContext(),getOrange_text(), Toast.LENGTH_SHORT).show();
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    orangeHandle.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            Intent orange = new Intent(MainActivity.this, ActivityOrange.class);
-                            startActivity(orange);
-                            v.setPressed(false);
-                        }
-                    }, 900); //delay for 900 ms
-                    v.setPressed(true);
+
+        eMachinesRef = FirebaseDatabase.getInstance().getReference("events/");
+        eMachinesRef.addValueEventListener(new ValueEventListener() {
+
+                @Override
+                public boolean onTouch ( final View v, MotionEvent event){
+                    // Toast.makeText(getApplicationContext(),getOrange_text(), Toast.LENGTH_SHORT).show();
+                    if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                        orangeHandle.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent orange = new Intent(MainActivity.this, ActivityOrange.class);
+                                startActivity(orange);
+                                v.setPressed(false);
+                            }
+
+                        }, 900); //delay for 900 ms
+                        v.setPressed(true);
+
+                    }
+                }
+                currentSnapshot = tempSnapshot;
+            }
 
                     return true;
                 }
                 return false;
             }
         });
-    }//end onCreate
+    } //end onCreate
 
 }//end MainActivity
 
