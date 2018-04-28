@@ -1,29 +1,20 @@
 package com.example.emmym.androidbt;
 
-import android.annotation.SuppressLint;
-
-import android.os.Handler;
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
-import android.content.Intent;
-
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.SurfaceView;
-import android.view.View;
 
-import android.widget.ImageView;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.zxing.Result;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
-
-public class MainActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
+public class QRCodeActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
     SurfaceView cameraPreview;
     TextView txtResult;
     int RequestCameraPermissionID = 1001;
@@ -61,5 +52,4 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
     }// end onPause
 
 
-}//end MainActivity
-
+}
