@@ -88,17 +88,6 @@ public class MapActivity extends Activity {
         });
 
     }
-    public void createPerson(int numPeople){
-
-        TableLayout table = findViewById(R.id.tableID);
-        for(int ii = 0; ii < numPeople; ii++) {
-            TableRow personRow = new TableRow(this);
-            for(int jj = 0; jj < 1 ; jj++){
-            ImageView person = new ImageView(this);
-            person.setImageDrawable(getResources().getDrawable(R.drawable.));
-            }
-        }
-    }
 }
 
 
