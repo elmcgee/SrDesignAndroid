@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/touchLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible">
+
+    <ImageView
+        android:id="@+id/floor"
+        android:layout_width="351dp"
+        android:layout_height="481dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="34dp"
+        android:background="@android:color/darker_gray"
+        app:srcCompat="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:text="@string/map"
+        android:textSize="30sp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/blue_square"
+        android:layout_width="97dp"
+        android:layout_height="87dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="118dp"
+        android:background="@android:color/holo_blue_bright" />
+
+    <ImageView
+        android:id="@+id/green_square"
+        android:layout_width="97dp"
+        android:layout_height="87dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="200dp"
+        android:layout_marginEnd="49dp"
+        android:background="@android:color/holo_green_light" />
+
+    <ImageView
+        android:id="@+id/star_person"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="72dp"
+        android:layout_marginStart="83dp"
+        android:background="@android:drawable/star_big_on"
+        app:srcCompat="@android:drawable/star_big_on" />
+
+    <TextView
+        android:id="@+id/exhibit_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/star_person"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="170dp"
+        android:text="Exhibit 1"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/exhibit_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="215dp"
+        android:layout_marginEnd="71dp"
+        android:text="Exhibit 2"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/legendStar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="35dp"
+        android:layout_toStartOf="@+id/legendText"
+        android:background="@android:drawable/btn_star_big_on"
+        app:srcCompat="@android:drawable/btn_star_big_on"
+        android:layout_toLeftOf="@+id/legendText" />
+
+    <TextView
+        android:id="@+id/legendText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/exhibit_two"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/exhibit_two"
+        android:layout_marginTop="38dp"
+        android:text=": You"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/legendHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/exhibit_two"
+        android:layout_alignParentTop="true"
+        android:text="Legend"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_alignRight="@+id/exhibit_two" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tableID">
+
+    </TableLayout>
+    <!-- <Button
+        android:id="@+id/alter_map_btn"
+        android:layout_width="156dp"
+        android:layout_height="37dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="#0080ff"
+        android:text="@string/edit_map"
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold"
+        android:layout_alignParentLeft="true"
+        android:onClick="onEditMapClick"/>
+-->
+</RelativeLayout>
