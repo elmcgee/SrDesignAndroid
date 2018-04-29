@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private IntentIntegrator qrScan;
     //View Objects
     private Button buttonScan;
-    MapActivity map = new MapActivity();
+     private MapActivity map = new MapActivity();
     private User localUser;
   //  MapActivity map = new MapActivity();
     private static final String TAG = "MainActivity";
@@ -124,6 +124,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     //setting values to textviews
                     Toast.makeText(this, "successful", Toast.LENGTH_LONG).show();
                     localUser = new User(obj.getString("name"));
+                    Intent map = new Intent(MainActivity.this, MapActivity.class);
+                    startActivity(map);
 //                    textViewAddress.setText(obj.getString("address"));
                 } catch (JSONException e) {
                     e.printStackTrace();

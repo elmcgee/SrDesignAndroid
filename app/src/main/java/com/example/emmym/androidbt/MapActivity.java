@@ -91,16 +91,18 @@ public class MapActivity extends Activity {
     }// oncreate
     public void updateMap(String userLocation, String username){
        // final TextView personName = findViewById(R.id.name_person);
-       // Toast.makeText(getApplicationContext(),userLocation + " " + username ,Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),"hi",Toast.LENGTH_SHORT).show();
         //personName.setText(username);
-        if(userLocation.equals(exhibitOne)) {
+
+
+        /*if(userLocation.equals(exhibitOne)) {
             personStar.setX(getBlueX());
             personStar.setY(getBlueY());
         }
         else if(userLocation.equals(exhibitTwo)){
             personStar.setX(getGreenX());
             personStar.setY(getGreenY());
-        }
+        }*/
     }// updateMap
 
     public float getBlueX() {
