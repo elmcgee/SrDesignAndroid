@@ -8,12 +8,11 @@
 
     <ImageView
         android:id="@+id/floor"
-        android:layout_width="468dp"
-        android:layout_height="664dp"
-        android:layout_alignParentEnd="true"
+        android:layout_width="match_parent"
+        android:layout_height="368dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginEnd="45dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="94dp"
         android:background="@android:color/darker_gray"
         app:srcCompat="@android:color/darker_gray" />
 
@@ -30,27 +29,23 @@
 
     <ImageView
         android:id="@+id/blue_square"
-        android:layout_width="97dp"
-        android:layout_height="87dp"
+        android:layout_width="94dp"
+        android:layout_height="57dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="98dp"
-        android:layout_marginTop="152dp"
-        android:background="@android:color/holo_blue_bright"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="98dp" />
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="130dp"
+        android:background="@android:color/holo_blue_bright" />
 
     <ImageView
         android:id="@+id/green_square"
-        android:layout_width="97dp"
-        android:layout_height="87dp"
-        android:layout_marginEnd="78dp"
+        android:layout_width="91dp"
+        android:layout_height="46dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="377dp"
-         android:background="@android:color/holo_green_light"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="78dp" />
+        android:layout_marginBottom="135dp"
+        android:layout_marginEnd="18dp"
+        android:background="@android:color/holo_green_light" />
 
     <ImageView
         android:id="@+id/star_person"
@@ -58,48 +53,42 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="169dp"
-        android:layout_marginStart="111dp"
+        android:layout_marginBottom="83dp"
+        android:layout_marginStart="36dp"
         android:background="@android:drawable/star_big_on"
-        app:srcCompat="@android:drawable/star_big_on"
-        android:layout_marginLeft="111dp" />
+        app:srcCompat="@android:drawable/star_big_on" />
 
     <TextView
         android:id="@+id/exhibit_one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/blue_square"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="120dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="155dp"
+        android:layout_toEndOf="@+id/star_person"
         android:text="Exhibit 1"
         android:textColor="@color/colorPrimaryDark"
-        android:textStyle="bold"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="120dp" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/exhibit_two"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/green_square"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="99dp"
+        android:layout_marginBottom="144dp"
+        android:layout_marginEnd="38dp"
         android:text="Exhibit 2"
         android:textColor="@color/colorPrimaryDark"
-        android:textStyle="bold"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="99dp" />
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/legendStar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="35dp"
-        android:layout_toStartOf="@+id/legendText"
+        android:layout_alignBottom="@+id/legendText"
+        android:layout_alignStart="@+id/green_square"
         android:background="@android:drawable/btn_star_big_on"
-        app:srcCompat="@android:drawable/btn_star_big_on"
-        android:layout_toLeftOf="@+id/legendText" />
+        app:srcCompat="@android:drawable/btn_star_big_on" />
 
     <TextView
         android:id="@+id/legendText"
@@ -126,12 +115,14 @@
         android:textStyle="bold"
         android:layout_alignRight="@+id/exhibit_two" />
 
-<TableLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/tableID">
+    <TableLayout
+        android:id="@+id/tableID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/legendStar">
 
-</TableLayout>
+    </TableLayout>
     <!-- <Button
         android:id="@+id/alter_map_btn"
         android:layout_width="156dp"
@@ -145,16 +136,4 @@
         android:layout_alignParentLeft="true"
         android:onClick="onEditMapClick"/>
 -->
-    <Button
-        android:id="@+id/qr_activity_btn"
-        android:layout_width="156dp"
-        android:layout_height="37dp"
-        android:layout_alignEnd="@+id/green_square"
-        android:layout_alignParentTop="true"
-        android:background="#0080ff"
-        android:onClick="onQRClick"
-        android:text="Go to QR CODE ACTIVITY"
-        android:textColor="@android:color/background_light"
-        android:textStyle="bold" />
-
 </RelativeLayout>

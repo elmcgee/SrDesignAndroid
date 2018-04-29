@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
         // setContentView(R.layout.activity_main);
-        setContentView(R.layout.activity_qrcode);
+        setContentView(R.layout.activity_main);
         //intializing scan object
         qrScan = new IntentIntegrator(this);
         //View objects
