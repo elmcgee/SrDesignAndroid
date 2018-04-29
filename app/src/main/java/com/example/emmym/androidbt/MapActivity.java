@@ -6,29 +6,56 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.view.Gravity;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TableLayout;
-import android.widget.TableRow;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
 
 public class MapActivity extends Activity {
    // ImageView personStar = findViewById(R.id.star_person);
     //TextView  personName = findViewById(R.id.name_person);
-   private ImageView personStar;
+
+    public DatabaseReference eMachinesRef;
+    private FirebaseSnapshotObject currentSnapshot;
+    private User localUser;
     private float blueX,blueY,greenX,greenY;
+    private ImageView personStar;
     String exhibitOne = "east-01";
     String exhibitTwo ="thomas-home";
+    private static final String TAG = "MapActivity";
     private  ArrayList<Integer> figureArray  = new ArrayList();
+
+    interface MyHandlerInterface {
+        void onHandle(String string);
+    }
+    class MyClass {
+        MyHandlerInterface myHandler;
+        public void setHandlerListener(MyHandlerInterface listener)
+        {
+            myHandler=listener;
+        }
+        protected void myEventFired(String string)
+        {
+            if(myHandler!=null)
+                myHandler.onHandle(string);
+        }
+    }
+
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        this.localUser = new User(getIntent().getStringExtra("localUser"));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
         blueX = 0;
@@ -37,7 +64,29 @@ public class MapActivity extends Activity {
         greenY = 0;
         final ImageView blueBox = findViewById(R.id.blue_square);// exhibitOne
         final ImageView greenBox = findViewById(R.id.green_square);// exhibitTwo
-        personStar = findViewById(R.id.person_star);
+        final ImageView personStar = findViewById(R.id.person_star);
+
+        personStar.setVisibility(View.INVISIBLE);
+
+        final MyClass myListener = new MyClass();
+
+        myListener.setHandlerListener(new MyHandlerInterface() {
+            @Override
+            public void onHandle(String string) {
+                // final TextView personName = findViewById(R.id.name_person);
+                // Toast.makeText(getApplicationContext(),userLocation + " " + username ,Toast.LENGTH_SHORT).show();
+                //personName.setText(username);
+                if(string.equals(exhibitOne)) {
+                    personStar.setX(blueBox.getX());
+                    personStar.setY(blueBox.getY());
+                }
+                else if(string.equals(exhibitTwo)){
+                    personStar.setX(greenBox.getX());
+                    personStar.setY(greenBox.getY());
+                }
+                personStar.setVisibility(View.VISIBLE);
+            }// updateMap
+        });
 
         //BlueBox touch
         final Handler blueHandle = new Handler();
@@ -88,20 +137,45 @@ public class MapActivity extends Activity {
             }
         });
 
+        eMachinesRef = FirebaseDatabase.getInstance().getReference("events/");
+        eMachinesRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                FirebaseSnapshotObject tempSnapshot = dataSnapshot.getValue(FirebaseSnapshotObject.class);
+                if(currentSnapshot != null && localUser != null) {
+                    Map<String, ArrayList<String>> detectionResult = tempSnapshot.whoWasDetected(currentSnapshot);
+                    if (detectionResult != null) {
+                        Iterator it = detectionResult.entrySet().iterator();
+                        while (it.hasNext()) {
+                            Map.Entry pair = (Map.Entry)it.next();
+                            for(String name: ((ArrayList<String>)pair.getValue())) {
+                                if(name.equals(localUser.getName())) {
+                                    Toast.makeText(getApplicationContext(), "Your face is detected at " + pair.getKey(), Toast.LENGTH_LONG).show();
+                                    myListener.myEventFired(pair.getKey().toString());
+                                    // updateMap(pair.getKey().toString(),name);
+                                }
+
+                                Log.d(TAG, "Detected " + name + "'s face at " + pair.getKey() + ".");
+
+                            }
+                            it.remove(); // avoids a ConcurrentModificationException
+                        }
+                    }
+                } else if(localUser == null) {
+                    Toast.makeText(getApplicationContext(), "Make sure you scan your QRCode", Toast.LENGTH_LONG).show();
+                }
+                currentSnapshot = tempSnapshot;
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+
     }// oncreate
-    public void updateMap(String userLocation, String username){
-       // final TextView personName = findViewById(R.id.name_person);
-       // Toast.makeText(getApplicationContext(),userLocation + " " + username ,Toast.LENGTH_SHORT).show();
-        //personName.setText(username);
-        if(userLocation.equals(exhibitOne)) {
-            personStar.setX(getBlueX());
-            personStar.setY(getBlueY());
-        }
-        else if(userLocation.equals(exhibitTwo)){
-            personStar.setX(getGreenX());
-            personStar.setY(getGreenY());
-        }
-    }// updateMap
+
 
     public float getBlueX() {
         return blueX;

@@ -36,9 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private IntentIntegrator qrScan;
     //View Objects
     private Button buttonScan;
-    MapActivity map = new MapActivity();
     private User localUser;
-  //  MapActivity map = new MapActivity();
     private static final String TAG = "MainActivity";
     private FirebaseSnapshotObject currentSnapshot;
 
@@ -59,7 +57,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             for(String name: ((ArrayList<String>)pair.getValue())) {
                                 if(name.equals(localUser.getName())) {
                                     Toast.makeText(getApplicationContext(), "Your face is detected at " + pair.getKey(), Toast.LENGTH_LONG).show();
-                                    map.updateMap(pair.getKey().toString(),name);
                                 }
 
                                 Log.d(TAG, "Detected " + name + "'s face at " + pair.getKey() + ".");
@@ -95,6 +92,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onButtonTouchClick(View v){
         if(v.getId() == R.id.button_touchScreen){
             Intent intent = new Intent(MainActivity.this, MapActivity.class);
+            intent.putExtra("localUser", localUser.getName());
             startActivity(intent);
 
         }
