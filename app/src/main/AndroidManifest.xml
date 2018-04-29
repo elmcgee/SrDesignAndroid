@@ -27,8 +27,7 @@
         <activity android:name=".BluetoothActivity"/>
         <activity android:name=".ActivityBlue"/>
         <activity android:name=".ActivityGreen"/>
-        <activity android:name=".ActivityRed"/>
-        <activity android:name=".ActivityOrange"/>
+
         <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES" android:value="barcode"/>
     </application>
 

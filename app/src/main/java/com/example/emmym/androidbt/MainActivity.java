@@ -36,9 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private IntentIntegrator qrScan;
     //View Objects
     private Button buttonScan;
-
     private User localUser;
-
     private static final String TAG = "MainActivity";
     private FirebaseSnapshotObject currentSnapshot;
 
@@ -80,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
         // setContentView(R.layout.activity_main);
-        setContentView(R.layout.activity_qrcode);
+        setContentView(R.layout.activity_main);
         //intializing scan object
         qrScan = new IntentIntegrator(this);
         //View objects
@@ -94,6 +92,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onButtonTouchClick(View v){
         if(v.getId() == R.id.button_touchScreen){
             Intent intent = new Intent(MainActivity.this, MapActivity.class);
+            intent.putExtra("localUser", localUser.getName());
             startActivity(intent);
 
         }

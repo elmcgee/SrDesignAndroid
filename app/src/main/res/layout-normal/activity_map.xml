@@ -56,7 +56,6 @@
         android:id="@+id/person_star"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:background="@drawable/ic_person_outline_black_24dp"
         app:srcCompat="@drawable/ic_person_outline_black_24dp"
         tools:ignore="VectorDrawableCompat" />
@@ -88,6 +87,10 @@
         android:textStyle="bold"
         android:layout_marginRight="71dp"
         android:layout_alignParentRight="true" />
+
+
+
+
 
 
     <!-- <Button
