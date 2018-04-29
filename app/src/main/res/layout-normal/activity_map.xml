@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/touchLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -35,7 +36,9 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="70dp"
         android:layout_marginTop="118dp"
-        android:background="@android:color/holo_blue_bright" />
+        android:background="@android:color/holo_blue_bright"
+        android:layout_marginLeft="70dp"
+        android:layout_alignParentLeft="true" />
 
     <ImageView
         android:id="@+id/green_square"
@@ -45,18 +48,17 @@
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="200dp"
         android:layout_marginEnd="49dp"
-        android:background="@android:color/holo_green_light" />
+        android:background="@android:color/holo_green_light"
+        android:layout_marginRight="49dp"
+        android:layout_alignParentRight="true" />
 
     <ImageView
-        android:id="@+id/star_person"
+        android:id="@+id/person_star"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="72dp"
-        android:layout_marginStart="83dp"
-        android:background="@android:drawable/star_big_on"
-        app:srcCompat="@android:drawable/star_big_on" />
+        android:background="@drawable/ic_person_outline_black_24dp"
+        app:srcCompat="@drawable/ic_person_outline_black_24dp"
+        tools:ignore="VectorDrawableCompat" />
 
     <TextView
         android:id="@+id/exhibit_one"
@@ -68,7 +70,9 @@
         android:layout_marginTop="169dp"
         android:text="Exhibit 1"
         android:textColor="@color/colorPrimaryDark"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginLeft="91dp"
+        android:layout_alignParentLeft="true" />
 
     <TextView
         android:id="@+id/exhibit_two"
@@ -80,50 +84,15 @@
         android:layout_marginEnd="71dp"
         android:text="Exhibit 2"
         android:textColor="@color/colorPrimaryDark"
-        android:textStyle="bold" />
-
-    <ImageView
-        android:id="@+id/legendStar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/legendText"
-        android:layout_alignStart="@+id/green_square"
-        android:background="@android:drawable/btn_star_big_on"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
-
-    <TextView
-        android:id="@+id/legendText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/exhibit_two"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/exhibit_two"
-        android:layout_marginTop="38dp"
-        android:text=": You"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="15sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/legendHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/exhibit_two"
-        android:layout_alignParentTop="true"
-        android:text="Legend"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_alignRight="@+id/exhibit_two" />
+        android:layout_marginRight="71dp"
+        android:layout_alignParentRight="true" />
 
-    <TableLayout
-        android:id="@+id/tableID"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/legendStar">
 
-    </TableLayout>
+
+
+
+
     <!-- <Button
         android:id="@+id/alter_map_btn"
         android:layout_width="156dp"

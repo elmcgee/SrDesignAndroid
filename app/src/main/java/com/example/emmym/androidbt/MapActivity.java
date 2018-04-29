@@ -13,30 +13,31 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class MapActivity extends Activity {
-    private String blue_text = null;
-    private String green_text = null;
-    private String red_text = null;
-    private String orange_text = null;
-    private String orange_floor = null;
-    private Toast toast;
+   // ImageView personStar = findViewById(R.id.star_person);
+    //TextView  personName = findViewById(R.id.name_person);
+   private ImageView personStar;
+    private float blueX,blueY,greenX,greenY;
+    String exhibitOne = "east-01";
+    String exhibitTwo ="thomas-home";
     private  ArrayList<Integer> figureArray  = new ArrayList();
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-
-        final ImageView blueBox = findViewById(R.id.blue_square);
-        final ImageView greenBox = findViewById(R.id.green_square);
-        final ImageView personStar = findViewById(R.id.star_person);
-
-
-
+        blueX = 0;
+        blueY = 0;
+        greenX = 0;
+        greenY = 0;
+        final ImageView blueBox = findViewById(R.id.blue_square);// exhibitOne
+        final ImageView greenBox = findViewById(R.id.green_square);// exhibitTwo
+        personStar = findViewById(R.id.person_star);
 
         //BlueBox touch
         final Handler blueHandle = new Handler();
@@ -44,9 +45,9 @@ public class MapActivity extends Activity {
 
             @Override
             public boolean onTouch(final View  v, MotionEvent event) {
-                float blueX = blueBox.getX();
-                float blueY = blueBox.getY();
-                Toast.makeText(getApplicationContext(), "Blue X: " + String.valueOf(blueX) + " Blue Y: " + String.valueOf(blueY),Toast.LENGTH_SHORT).show();
+                setBlueX(blueBox.getX());
+                setBlueY(blueBox.getY());
+                Toast.makeText(getApplicationContext(), "Blue X: " + String.valueOf(getBlueX()) + " Blue Y: " + String.valueOf(getBlueY()),Toast.LENGTH_SHORT).show();
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     blueHandle.postDelayed(new Runnable() {
                         @Override
@@ -67,9 +68,9 @@ public class MapActivity extends Activity {
         greenBox.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(final View v, MotionEvent event) {
-                float greenX = greenBox.getX();
-                float greenY = greenBox.getY();
-                Toast.makeText(getApplicationContext(), "Green X: " + String.valueOf(greenX) + " Green Y: " + String.valueOf(greenY),Toast.LENGTH_SHORT).show();
+                setGreenX(greenBox.getX());
+                setGreenY(greenBox.getY());
+                Toast.makeText(getApplicationContext(), "Green X: " + String.valueOf(getGreenX()) + " Green Y: " + String.valueOf(getGreenY()),Toast.LENGTH_SHORT).show();
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     greenHandle.postDelayed(new Runnable() {
                         @Override
@@ -87,7 +88,52 @@ public class MapActivity extends Activity {
             }
         });
 
+    }// oncreate
+    public void updateMap(String userLocation, String username){
+       // final TextView personName = findViewById(R.id.name_person);
+       // Toast.makeText(getApplicationContext(),userLocation + " " + username ,Toast.LENGTH_SHORT).show();
+        //personName.setText(username);
+        if(userLocation.equals(exhibitOne)) {
+            personStar.setX(getBlueX());
+            personStar.setY(getBlueY());
+        }
+        else if(userLocation.equals(exhibitTwo)){
+            personStar.setX(getGreenX());
+            personStar.setY(getGreenY());
+        }
+    }// updateMap
+
+    public float getBlueX() {
+        return blueX;
     }
-}
+
+    public void setBlueX(float blueX) {
+        this.blueX = blueX;
+    }
+
+    public float getBlueY() {
+        return blueY;
+    }
+
+    public void setBlueY(float blueY) {
+        this.blueY = blueY;
+    }
+
+    public float getGreenX() {
+        return greenX;
+    }
+
+    public void setGreenX(float greenX) {
+        this.greenX = greenX;
+    }
+
+    public float getGreenY() {
+        return greenY;
+    }
+
+    public void setGreenY(float greenY) {
+        this.greenY = greenY;
+    }
+}//MapActivity
 
 
