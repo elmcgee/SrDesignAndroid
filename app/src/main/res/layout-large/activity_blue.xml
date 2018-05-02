@@ -2,16 +2,21 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ActivityBlue">
+
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="match_parent"
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
         android:layout_height="422dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        app:srcCompat="@drawable/red_panda"
+        android:layout_marginTop="96dp"
+        app:srcCompat="@drawable/amish"
         android:layout_alignParentLeft="true" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -19,6 +24,6 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="43dp"
-        android:text="Green Exhibit"
-        android:textSize="20dp"/>
+        android:text="Blue Exhibit"
+        android:textSize="25sp"/>
 </RelativeLayout>
