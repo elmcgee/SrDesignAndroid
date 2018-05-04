@@ -2,15 +2,11 @@ package com.example.emmym.androidbt;
 
 import android.content.Context;
 import android.os.ParcelUuid;
-import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 
@@ -42,7 +38,7 @@ public class FoundBTDevicesAdapter extends ArrayAdapter<BluetoothObject> {
         TextView bt_uuid = (TextView) rowView.findViewById(R.id.textview_bt_scan_uuid);
         TextView bt_signal_strength = (TextView) rowView.findViewById(R.id.textview_bt_scan_signal_strength);
 
-        // set teh text for each widget
+        // set the text for each widget
         bt_name.setText(bluetoothObject.getBluetooth_name());
         bt_address.setText("address: "+bluetoothObject.getBluetooth_address() );
         bt_bondState.setText("state: "+bluetoothObject.getBluetooth_state());

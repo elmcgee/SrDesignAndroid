@@ -16,7 +16,8 @@
         android:layout_marginEnd="41dp"
         android:layout_marginTop="94dp"
         android:background="@android:color/darker_gray"
-        app:srcCompat="@android:color/darker_gray" />
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="41dp" />
 
     <TextView
         android:id="@+id/textView"
@@ -113,3 +114,4 @@
         android:onClick="onEditMapClick"/>
 -->
 </RelativeLayout>
+<!-- Commented button allowed user to switch from map activity to alter map activity -->

@@ -23,9 +23,6 @@ import java.util.Iterator;
 import java.util.Map;
 
 public class MapActivity extends Activity {
-   // ImageView personStar = findViewById(R.id.star_person);
-    //TextView  personName = findViewById(R.id.name_person);
-
     public DatabaseReference eMachinesRef;
     private FirebaseSnapshotObject currentSnapshot;
     private User localUser;
@@ -34,7 +31,6 @@ public class MapActivity extends Activity {
     String exhibitOne = "east-01";
     String exhibitTwo ="thomas-home";
     private static final String TAG = "MapActivity";
-    private  ArrayList<Integer> figureArray  = new ArrayList();
 
     interface MyHandlerInterface {
         void onHandle(String string);
@@ -73,9 +69,6 @@ public class MapActivity extends Activity {
         myListener.setHandlerListener(new MyHandlerInterface() {
             @Override
             public void onHandle(String string) {
-                // final TextView personName = findViewById(R.id.name_person);
-                // Toast.makeText(getApplicationContext(),userLocation + " " + username ,Toast.LENGTH_SHORT).show();
-                //personName.setText(username);
                 if(string.equals(exhibitOne)) {
                     personStar.setX(blueBox.getX());
                     personStar.setY(blueBox.getY());
@@ -89,14 +82,14 @@ public class MapActivity extends Activity {
         });
 
         //BlueBox touch
+        // Handler handles the bluetooth activity to only display once per touching the exhibit on the map
         final Handler blueHandle = new Handler();
         blueBox.setOnTouchListener(new View.OnTouchListener() {
 
             @Override
             public boolean onTouch(final View  v, MotionEvent event) {
-                setBlueX(blueBox.getX());
-                setBlueY(blueBox.getY());
-                Toast.makeText(getApplicationContext(), "Blue X: " + String.valueOf(getBlueX()) + " Blue Y: " + String.valueOf(getBlueY()),Toast.LENGTH_SHORT).show();
+                // Debug to find the x and y coordinates of the exhibit
+              //  Toast.makeText(getApplicationContext(), "Blue X: " + String.valueOf(getBlueX()) + " Blue Y: " + String.valueOf(getBlueY()),Toast.LENGTH_SHORT).show();
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     blueHandle.postDelayed(new Runnable() {
                         @Override
@@ -113,13 +106,13 @@ public class MapActivity extends Activity {
                 return false;
             }});
         //GreenBox touch
+        // Handler handles the bluetooth activity to only display once per touching the exhibit on the map
         final Handler greenHandle = new Handler();
         greenBox.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(final View v, MotionEvent event) {
-                setGreenX(greenBox.getX());
-                setGreenY(greenBox.getY());
-                Toast.makeText(getApplicationContext(), "Green X: " + String.valueOf(getGreenX()) + " Green Y: " + String.valueOf(getGreenY()),Toast.LENGTH_SHORT).show();
+                // Debug to identify the location of the exhibit
+              //  Toast.makeText(getApplicationContext(), "Green X: " + String.valueOf(getGreenX()) + " Green Y: " + String.valueOf(getGreenY()),Toast.LENGTH_SHORT).show();
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     greenHandle.postDelayed(new Runnable() {
                         @Override
@@ -175,39 +168,6 @@ public class MapActivity extends Activity {
         });
 
     }// oncreate
-
-
-    public float getBlueX() {
-        return blueX;
-    }
-
-    public void setBlueX(float blueX) {
-        this.blueX = blueX;
-    }
-
-    public float getBlueY() {
-        return blueY;
-    }
-
-    public void setBlueY(float blueY) {
-        this.blueY = blueY;
-    }
-
-    public float getGreenX() {
-        return greenX;
-    }
-
-    public void setGreenX(float greenX) {
-        this.greenX = greenX;
-    }
-
-    public float getGreenY() {
-        return greenY;
-    }
-
-    public void setGreenY(float greenY) {
-        this.greenY = greenY;
-    }
 }//MapActivity
 
 

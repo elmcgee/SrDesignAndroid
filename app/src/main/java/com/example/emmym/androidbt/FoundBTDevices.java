@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 
 import java.util.ArrayList;
-
+// List the discovered bluetooth devices on an activity
 public class FoundBTDevices extends ListActivity{
     private BluetoothAdapter mBluetoothAdapter;
     private ArrayList<BluetoothObject> arrayOfFoundBTDevices;

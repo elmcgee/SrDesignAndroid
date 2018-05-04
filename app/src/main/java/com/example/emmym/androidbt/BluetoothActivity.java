@@ -60,6 +60,7 @@ public class BluetoothActivity extends AppCompatActivity {
         });
 
     }
+    // Enable bluetooth on your device
     private void enableBluetoothOnDevice(){
         if(mBluetoothAdapter == null){
             Log.e(LOG_TAG, "This device does not have a bluetooth adapter");
@@ -67,6 +68,7 @@ public class BluetoothActivity extends AppCompatActivity {
             //if the android device does no have bluetooth, just return and get out.
         }
         if(!mBluetoothAdapter.isEnabled()){
+            // turn on bluetooth
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
         }
@@ -86,6 +88,7 @@ public class BluetoothActivity extends AppCompatActivity {
         }
     }
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
+    // recieve and display paired bluetooth devices to our own device
     private ArrayList getArrayOfAlreadyPairedBluetoothDevices(){
         ArrayList<BluetoothObject> arrayOfAlreadyPairedBTDevices = null;
         Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
@@ -105,6 +108,7 @@ public class BluetoothActivity extends AppCompatActivity {
         }
         return arrayOfAlreadyPairedBTDevices;
     }
+    // search for bluetooth device.. This portion doesn't work.. and needs fixing
     private void scanForBluetoothDevices(){
         //Register the BroadcastReceiver
         Intent intent = new Intent(this, FoundBTDevices.class);

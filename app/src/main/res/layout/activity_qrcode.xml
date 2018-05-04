@@ -11,3 +11,4 @@
         android:text="Scan QR Code" />
 
 </RelativeLayout>
+<!-- activity that only displayed the qr code -->

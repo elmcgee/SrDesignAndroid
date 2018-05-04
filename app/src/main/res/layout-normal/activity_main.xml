@@ -56,3 +56,4 @@
         android:textStyle="bold"/>
 
 </RelativeLayout>
+<!-- This layout is for normal size smart phones such as a motorola Z-->

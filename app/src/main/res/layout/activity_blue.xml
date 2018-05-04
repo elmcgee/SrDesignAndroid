@@ -26,3 +26,4 @@
         android:text="Blue Exhibit"
         android:textSize="20dp"/>
 </RelativeLayout>
+<!--Activity displays the blue exhibit's content-->

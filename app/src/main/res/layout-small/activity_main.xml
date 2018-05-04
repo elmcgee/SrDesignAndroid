@@ -4,3 +4,4 @@
     android:layout_height="match_parent">
 
 </android.support.constraint.ConstraintLayout>
+<!-- This layout wasn't implemented, but if it was to be removed, then it will remove all the layouts associated with the map activity-->

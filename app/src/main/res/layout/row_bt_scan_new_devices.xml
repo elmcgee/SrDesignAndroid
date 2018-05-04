@@ -43,3 +43,4 @@
         android:text="BT SIGNAL STRENGTH"
         android:textColor="#000000"/>
 </LinearLayout>
+<!-- layout of newly scanned bluetooth devices-->
